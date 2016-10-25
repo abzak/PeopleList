@@ -1,12 +1,52 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h:dataTable value="#{personListBen.peopleList}" var="p"
+                     styleClass="order-table"
+                     headerClass="order-table-header"
+                     rowClasses="order-table-odd-row,order-table-even-row"
+                     >
+
+            <h:column>
+                <!-- column header -->
+                <f:facet name="header">Id</f:facet>
+                <!-- row record -->
+                #{p.id}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Gender</f:facet>
+                    #{p.gender}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">First Name</f:facet>
+                    #{p.firstName}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Last Name</f:facet>
+                    #{p.lastName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Married</f:facet>
+                    #{p.married}
+            </h:column>
+
+            <h:column>
+                <f:facet name="header">Birth Date</f:facet>
+                    #{p.birthDate}
+            </h:column>
+
+
+        </h:dataTable>
+
     </h:body>
 </html>
 
