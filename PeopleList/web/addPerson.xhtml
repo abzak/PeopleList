@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Easy</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid>
+                <h:outputLabel value="Genre " style="font-weight:bold" />
+                <h:selectOneMenu value="#{person.gender}">
+                    <f:selectItem itemValue="male" itemLabel="Male" />
+                    <f:selectItem itemValue="female" itemLabel="Femme" />
+                    <f:selectItem itemValue="IJWTK" itemLabel="I Just want to know" />
+                </h:selectOneMenu>
+                <h:outputLabel value="First Name " style="font-weight:bold" />
+                <h:inputText value="#{person.firstName}" />
+                <h:outputLabel value="Last Name " style="font-weight:bold" />
+                <h:inputText value="#{person.lastName}" />
+                <h:outputLabel value="Is Married? " style="font-weight:bold" />
+                <h:selectBooleanCheckbox value="#{person.married}" />
+                <h:outputLabel value="Birth Date " style="font-weight:bold" />
+                <h:inputText id="date" value="#{person.birthDate}"
+                             size="20" required="true"
+                             label="Receipt Date" >
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+               
+                </h:inputText>
+                 <h:commandButton value="Ajouter" action="#{person.save()}" /> 
+            </h:panelGrid>
+        </h:form>  
+
+    </h:body>
+</html>
+
