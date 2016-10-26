@@ -4,29 +4,31 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Easy</title>
     </h:head>
     <h:body>
         <h:form>
             <h:panelGrid>
                 <h:outputLabel value="Genre " style="font-weight:bold" />
-                <h:selectOneMenu value="#{p.gender}">
+                <h:selectOneMenu value="#{person.gender}">
                     <f:selectItem itemValue="male" itemLabel="Male" />
                     <f:selectItem itemValue="female" itemLabel="Femme" />
                     <f:selectItem itemValue="IJWTK" itemLabel="I Just want to know" />
                 </h:selectOneMenu>
                 <h:outputLabel value="First Name " style="font-weight:bold" />
-                <h:inputText value="#{p.firstName}" />
+                <h:inputText value="#{person.firstName}" />
                 <h:outputLabel value="Last Name " style="font-weight:bold" />
-                <h:inputText value="#{p.lastName}" />
+                <h:inputText value="#{person.lastName}" />
                 <h:outputLabel value="Is Married? " style="font-weight:bold" />
-                <h:selectBooleanCheckbox value="#{p.married}" />
+                <h:selectBooleanCheckbox value="#{person.married}" />
                 <h:outputLabel value="Birth Date " style="font-weight:bold" />
-                <h:inputText id="date" value="#{p.birthDate}"
+                <h:inputText id="date" value="#{person.birthDate}"
                              size="20" required="true"
                              label="Receipt Date" >
-                    <f:convertDateTime pattern="dd-MM-yyyy" />
+                    <f:convertDateTime pattern="dd/MM/yyyy" />
+               
                 </h:inputText>
+                 <h:commandButton value="Ajouter" action="#{person.save()}" /> 
             </h:panelGrid>
         </h:form>  
 

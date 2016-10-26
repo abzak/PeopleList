@@ -5,7 +5,6 @@
  */
 package ch.hearc.ig.odi.peoplelist.presentation.bean;
 
- 
 import ch.hearc.ig.odi.peoplelist.service.Services;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
@@ -17,16 +16,21 @@ import javax.inject.Named;
  * @author zakariae.chentouf
  */
 @RequestScoped
-@Named(value="personListBen")
+@Named(value = "personListBen")
 public class PersonListBean {
-    
- @Inject Services services;
+
+    @Inject
+    Services services;
 
     public PersonListBean() {
     }
- 
-    public List getPeopleList(){
-     return services.getPeopleList();
+
+    public List getPeopleList() {
+        return services.getPeopleList();
     }
-   
+
+    public String addPerson() {
+        return "addPerson";
+    }
+
 }

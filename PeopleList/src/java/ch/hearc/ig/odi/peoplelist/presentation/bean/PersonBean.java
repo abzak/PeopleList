@@ -19,14 +19,15 @@ import javax.inject.Named;
 @Named(value="person")
 public class PersonBean extends Person {
 
-     @Inject Services services;
+    @Inject Services services;
 
     public PersonBean() {
        super();
     }
     
-    public void save(){
+    public String save(){
        services.savePerson(getGender(), getFirstName(), getLastName(), getMarried(), getBirthDate());
+       return "index";
     }
     
   
