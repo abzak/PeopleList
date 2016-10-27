@@ -9,26 +9,26 @@
     <h:body>
         <h:form>
             <h:panelGrid>
-                <h:outputLabel value="Genre " style="font-weight:bold" />
+                <h:outputLabel value=">#{fields['textfield_gender']}" style="font-weight:bold" />
                 <h:selectOneMenu value="#{person.gender}">
-                    <f:selectItem itemValue="male" itemLabel="Male" />
-                    <f:selectItem itemValue="female" itemLabel="Femme" />
-                    <f:selectItem itemValue="IJWTK" itemLabel="I Just want to know" />
+                    <f:selectItem itemValue="male" itemLabel="#{fields['textfield_gender']}" />
+                    <f:selectItem itemValue="female" itemLabel="#{fields['textfield_gender']}" />
+                    <f:selectItem itemValue="IJWTK" itemLabel="#{fields['textfield_gender']}" />
                 </h:selectOneMenu>
-                <h:outputLabel value="First Name " style="font-weight:bold" />
+                <h:outputLabel value="#{fields['textfield_surname']}" style="font-weight:bold" />
                 <h:inputText value="#{person.firstName}" />
-                <h:outputLabel value="Last Name " style="font-weight:bold" />
+                <h:outputLabel value="#{fields['textfield_name']}" style="font-weight:bold" />
                 <h:inputText value="#{person.lastName}" />
-                <h:outputLabel value="Is Married? " style="font-weight:bold" />
+                <h:outputLabel value="#{fields['textfield_married']}" style="font-weight:bold" />
                 <h:selectBooleanCheckbox value="#{person.married}" />
-                <h:outputLabel value="Birth Date " style="font-weight:bold" />
+                <h:outputLabel value="#{fields['textfield_birthdate']}" style="font-weight:bold" />
                 <h:inputText id="date" value="#{person.birthDate}"
                              size="20" required="true"
                              label="Receipt Date" >
                     <f:convertDateTime pattern="dd/MM/yyyy" />
                
                 </h:inputText>
-                 <h:commandButton value="Ajouter" action="#{person.save()}" /> 
+                 <h:commandButton value="#{fields['button_add']}" action="#{person.save()}" /> 
             </h:panelGrid>
         </h:form>  
 

@@ -7,6 +7,13 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
+        Language : 
+        <h:form>
+        <h:selectOneMenu value="#{userData.locale}" onchange="submit()"
+            valueChangeListener="#{userData.localeChanged}">
+            <f:selectItems value="#{userData.countries}" /> 
+         </h:selectOneMenu> 
+        </h:form>
         <h:dataTable value="#{personListBen.peopleList}" var="p"
                      styleClass="order-table"
                      headerClass="order-table-header"
@@ -15,39 +22,39 @@
 
             <h:column>
                 <!-- column header -->
-                <f:facet name="header">Id</f:facet>
+                <f:facet name="header">#{fields['textfield_id']}</f:facet>
                 <!-- row record -->
                 #{p.id}
             </h:column>
 
             <h:column>
-                <f:facet name="header">Gender</f:facet>
+                <f:facet name="header">#{fields['textfield_gender']}</f:facet>
                     #{p.gender}
             </h:column>
 
             <h:column>
-                <f:facet name="header">First Name</f:facet>
+                <f:facet name="header">#{fields['textfield_surname']}</f:facet>
                     #{p.firstName}
             </h:column>
 
             <h:column>
-                <f:facet name="header">Last Name</f:facet>
+                <f:facet name="header">#{fields['textfield_name']}</f:facet>
                     #{p.lastName}
             </h:column>
             <h:column>
-                <f:facet name="header">Married</f:facet>
+                <f:facet name="header">#{fields['textfield_married']}</f:facet>
                     #{p.married}
-            </h:column>
+            </h:column> 
 
             <h:column>
-                <f:facet name="header">Birth Date</f:facet>
+                <f:facet name="header">#{fields['textfield_birthdate']}</f:facet>
                     #{p.birthDate}
             </h:column>
 
 
         </h:dataTable>
         <h:form>
-            <h:commandButton value="Ajouter" action="#{personListBen.addPerson()}" /> 
+            <h:commandButton value="#{fields['button_add']}" action="#{personListBen.addPerson()}" /> 
         </h:form>
     </h:body>
 </html>
